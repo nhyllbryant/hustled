@@ -22,10 +22,32 @@ public class AuthController {
         return "login";
     }
 
+    // ✅ New endpoint: serve login modal fragment dynamically
+    @GetMapping("/modal/login")
+    public String getLoginModal(Model model,
+                                @RequestParam(value = "fromRegister", required = false) Boolean fromRegister) {
+
+        if (Boolean.TRUE.equals(fromRegister)) {
+            model.addAttribute("loginHeader", "Registration Successful");
+        } else {
+            model.addAttribute("loginHeader", "Login");
+        }
+
+        return "fragments/login-modal :: loginModal";
+    }
+
     @GetMapping("/register")
     public String register(Model model) {
         model.addAttribute("user", new User());
         return "register";
+    }
+
+    // ✅ New endpoint: serve register modal fragment dynamically
+    @GetMapping("/modal/register")
+    public String getRegisterModal(Model model) {
+        model.addAttribute("user", new User());
+        return "fragments/register-modal :: registerModal";
+        // fragments/register-modal.html must contain <div th:fragment="registerModal">...</div>
     }
 
     @PostMapping("/register")
@@ -40,6 +62,7 @@ public class AuthController {
             model.addAttribute("error", "Username already exists.");
             return "register";
         }
-        return "redirect:/login?registered=true";
+        // ✅ Redirect to index with flag
+        return "redirect:/index?showLogin=true";
     }
 }

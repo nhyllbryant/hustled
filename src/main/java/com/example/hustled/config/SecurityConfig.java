@@ -34,7 +34,8 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable()) //Lambda
                 //.csrf(AbstractHttpConfigurer::disable) //MethodReference
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/", "/login", "/register", "/css/**").permitAll()
+                        .requestMatchers("/","/index", "/login", "/login/**", "/register","/modal/register", "/process-register").permitAll()
+                        .requestMatchers("/css/**", "/js/**", "/images/**", "/fonts/**", "/webjars/**").permitAll() // ✅ static resources
                         .requestMatchers("/jobs/**").authenticated()
                         .anyRequest().authenticated()
                 )
@@ -47,7 +48,7 @@ public class SecurityConfig {
                 )
                 .logout(logout -> logout
                         .logoutUrl("/logout")
-                        .logoutSuccessUrl("/")
+                        .logoutSuccessUrl("/index")
                         .permitAll()
                 )
                 .httpBasic(Customizer.withDefaults());
