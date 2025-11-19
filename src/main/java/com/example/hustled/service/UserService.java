@@ -29,8 +29,8 @@ public class UserService {
         }catch (Exception ex){
             ex.printStackTrace();
         }
-
-        System.out.println("New User: " + newUser.getId() + " | " + newUser.getUsername() + " | " + newUser.getEmail() + " | " + newUser.getPhone());
+        
+        System.out.println("New User: " + (newUser != null ? newUser.getId() : null) + " | " + (newUser != null ? newUser.getUsername() : null) + " | " + (newUser != null ? newUser.getEmail() : null) + " | " + (newUser != null ? newUser.getPhone() : null));
 
         return true;
     }
