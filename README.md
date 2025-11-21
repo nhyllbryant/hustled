@@ -166,8 +166,4 @@ We welcome contributions! If you would like to contribute, please follow these s
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-```
-
-Feel free to modify the sections according to your needs, such as updating the database setup, dependencies, or adding more specific instructions for your project.
-```
+...
