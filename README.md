@@ -1,4 +1,3 @@
-````markdown
 # Hustled Project
 
 Hustled is a web-based application designed for job seekers and employers, providing functionalities such as job listings, job applications, candidate profiles, employer dashboards, and much more. This project uses Java, Spring Boot, Maven, and various front-end technologies.
@@ -79,7 +78,6 @@ The project is organized into various directories that separate concerns like ba
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/yourusername/hustled.git
-````
 
 2. **Install dependencies**:
    The project uses Maven to manage dependencies. Make sure you have Maven installed. Run the following command to install all required dependencies:
