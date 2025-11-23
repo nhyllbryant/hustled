@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<div class="main-content">
+    <h2>Candidate Applications</h2>
+    <table>
+        <tr><th>Name</th><th>Job</th><th>Status</th></tr>
+        <tr th:each="c : ${candidates}">
+            <td th:text="${c.name}"></td>
+            <td th:text="${c.jobTitle}"></td>
+            <td th:text="${c.status}"></td>
+        </tr>
+    </table>
+</div>
+</head>
+</html>

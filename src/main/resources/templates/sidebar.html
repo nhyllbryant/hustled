@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="admin .css">
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="profile">
+        <img src="default-profile.png" alt="Admin Profile" id="profilePreview">
+        <input type="file" id="profileUpload" accept="image/*" onchange="previewImage(event)">
+        <h2>Hi, I am admin, Coz!</h2>
+    </div>
+    <nav>
+        <button class="nav-btn" onclick="location.href='admin_dashboard.html'">Dashboard</button>
+        <button class="nav-btn" onclick="location.href='admin_jobs.html'">Jobs</button>
+        <button class="nav-btn" onclick="location.href='admin_candidates.html'">Candidates</button>
+    </nav>
+
+    <!-- Logout now handled purely by JavaScript -->
+    <form onsubmit="return confirmLogout()">
+        <button type="submit" class="logout-btn">Logout</button>
+    </form>
+</div>
+
+<div class="main-content">
+    <h1>Welcome to the Admin Panel</h1>
+</div>
+
+<script>
+    function confirmLogout() {
+        if (confirm("Are you sure you want to logout?")) {
+            window.location.href = "index.html"; // redirect to index.html
+        }
+        return false; // prevent form submission
+    }
+
+    function previewImage(event) {
+        const reader = new FileReader();
+        reader.onload = function(){
+            document.getElementById('profilePreview').src = reader.result;
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    }
+</script>
+
+</body>
+</html>
