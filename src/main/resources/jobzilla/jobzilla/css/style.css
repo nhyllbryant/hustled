@@ -8774,6 +8774,7 @@ ol.comment-list li.comment .comment-respond .comment-form p {
   margin-bottom: 0px;
   font-size: 16px;
 }
+
 .twm-explore-content-2 .twm-explore-media-wrap2 {
   position: relative;
   z-index: 1;
@@ -18497,13 +18498,17 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 .banner-style-three .content-box h2 span, .banner-style-two .content-box h2 span, .blog-details-content .comment-box .form-inner .form-group label span, .blog-details-content .post-share-option .social-links li a:hover, .blog-details-content blockquote .icon-box, .chooseus-block-one .inner-box .link a:hover, .chooseus-block-one .inner-box h3 a:hover, .content_block_five .content-box .inner-box .single-item h4 a:hover, .content_block_four .content-box .download-btn a:hover, .content_block_three .content-box .accordion-box .accordion .acc-btn.active .icon-box, .content_block_three .content-box .accordion-box .accordion .acc-btn.active h4, .content_block_two .content-box .inner-box .single-item h3 a:hover, .download-section .content-box h2 span, .dueal-section.alternat-2 .content_block_two .content-box .inner-box .single-item h3 a:hover, .footer-bottom .bottom-inner .copyright p a, .header-top .info li a:hover, .header-top .social-links li a:hover, .image_block_one .image-box .single-item .support-box h4 a:hover, .image_block_two .image-inner .support-box h4 a:hover, .industries-block-two .inner-box:hover .icon-box, .job-sidebar .info-widget ul li p a:hover, .list-style-one li:before, .main-footer .links-widget .links-list li a:hover, .main-footer.light-footer .links-widget .links-list li a:hover, .main-header .menu-right-content .link-box a:hover, .main-header .menu-right-content .search-btn button:hover, .main-menu .navigation > li.current > a, .main-menu .navigation > li:hover > a, .main-menu .navigation > li > .megamenu li > a:hover, .main-menu .navigation > li > ul > li > a:hover, .main-menu .navigation > li > ul > li > ul > li > a:hover, .news-block-three .inner-box .lower-content .post-info li a:hover, .news-block-three .inner-box .lower-content .post-info li i, .news-block-three .inner-box .lower-content h3 a:hover, .news-block-two .inner-box .lower-content .post-info li a:hover, .news-block-two .inner-box .lower-content h3 a:hover, .page-title .bread-crumb li a:hover, .portfolio-block-one .inner-box .content-box h3 a:hover, .pricing-block-one .pricing-table h3, .scroll-to-top .scroll-bar-text, .sec-title .sub-title, .sec-title h2 span, .service-block-one .inner-box .lower-content h3 a:hover, .service-sidebar .download-widget h4 span, .team-block-one .inner-box .lower-content h3 a:hover, .testimonial-block-three .inner-box .icon-box, .testimonial-style-three .testimonial-block .content-box .icon-box, .training-block-one .inner-box .text-box h3 a:hover, .video_block_two .video-content a, .welcome-section .content-box .inner-box .single-item h3 a:hover, .welcome-section .content-box h2 span {
     color:var(--theme-color-2)
 }
-
-.banner-carousel .content-box .upper-text, .blog-details-content .post-share-option .tags-list li a:hover, .blog-sidebar .tags-widget .tags-list li a:hover, .content_block_five .content-box .inner-box .single-item .icon-box, .content_block_two .content-box .inner-box .single-item:after, .content_block_two .content-box .inner-box .single-item:hover .count-text, .dots-style-one .owl-dots button.active, .dots-style-one .owl-dots button:hover, .header-style-four .main-menu .navigation > li > a:after, .header-style-one .main-menu .navigation > li > a:after, .list-style-one li:after, .news-block-three .inner-box .lower-content .category, .news-block-two .inner-box .lower-content .category, .sec-title .sub-title:before, .testimonial-style-two .owl-dots button, .welcome-section .content-box .inner-box .single-item:hover .icon-box, .welcome-section.alternat-2 .content-box .inner-box .single-item .icon-box, button.ltr, button.rtl {
-    background:var(--theme-color-2)
-}
-
 .blog-details-content .comment-box .form-inner .form-group input:focus, .blog-details-content .comment-box .form-inner .form-group textarea:focus, .blog-details-content .post-share-option .tags-list li a:hover, .blog-sidebar .tags-widget .tags-list li a:hover, .contact-section .form-inner .form-group input:focus, .contact-section .form-inner .form-group textarea:focus, .funfact-block-one .inner-box:hover, .job-form-section .form-inner .form-group input:focus, .job-form-section .form-inner .form-group textarea:focus, .main-menu .navigation > li > .megamenu, .main-menu .navigation > li > ul, .main-menu .navigation > li > ul > li > ul, .sec-title .sub-title:after, .welcome-section .content-box .inner-box .single-item:hover {
     border-color:var(--theme-color-2) !important
+}
+.list-style-one {
+    list-style: none; /* This removes the box/bullet */
+    padding-left: 0;  /* Optional: Removes default indentation */
+}
+.list-style-one li::before {
+    content: none !important;
+    display: none !important;
+    border: none !important;
 }
 
 .rtl {
@@ -18585,11 +18590,6 @@ ol.comment-list li.comment .comment-respond .comment-form p {
     padding-right:40px
 }
 
-.rtl .list-style-one li:after, .rtl .list-style-one li:before {
-    left: inherit;
-    right:0
-}
-
 .rtl .slide-text {
     direction:ltr
 }
@@ -18618,6 +18618,7 @@ ol.comment-list li.comment .comment-respond .comment-form p {
     text-align:right
 }
 
+
 .rtl .nice-select:before {
     right: inherit;
     left:25px
@@ -18632,12 +18633,6 @@ ol.comment-list li.comment .comment-respond .comment-form p {
     margin-left: 10px
 }
 
-/*!
-Animate.css - http://daneden.me/animate
-Licensed under the MIT license - http://opensource.org/licenses/MIT
-
-Copyright (c) 2015 Daniel Eden
-*/
 .animated {
     animation-duration: 1s;
     animation-fill-mode:both
@@ -20485,6 +20480,431 @@ service_hexagon {
     content: "\e902"
 }
 
+
+
+/** team-section **/
+
+.team-section{
+  position: relative;
+}
+
+.team-section .pattern-layer{
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 1827px;
+  height: 1235px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.team-block-one{
+  position: relative;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.tabs-content .tab {
+    display: none; /* Hide all tabs by default */
+}
+.tabs-content .active-tab {
+    display: block; /* Show the active tab */
+}
+/* 1. HIDES ALL TAB CONTENT */
+.tabs-content .tab {
+    display: none;
+}
+
+.tabs-content .tab {
+    display: none;
+}
+
+.tabs-content .active-tab {
+    display: block;
+}
+
+/* --- Modern Footer Styling --- */
+
+.footer-modern {
+    background-color: #1a1a2e; /* Dark, deep color for a modern feel */
+    color: #f0f0f5; /* Light text */
+    padding: 60px 0 30px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-modern .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Top Grid Layout (Uses CSS Grid for structure) */
+.footer-top-grid {
+    display: grid;
+    /* 4 columns: 1.5x width for logo/contact, then 3 equal columns for links */
+    grid-template-columns: 1.5fr repeat(3, 1fr);
+    gap: 30px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-logo img {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.footer-about p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: #b0b0c5;
+}
+
+/* Contact List Styling */
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-list li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+    font-size: 14px;
+}
+
+.contact-list li i {
+    margin-right: 10px;
+    color: #83c051; /* ACCENT COLOR CHANGE APPLIED HERE */
+    font-size: 16px;
+    padding-top: 2px;
+}
+
+.contact-list a {
+    color: #f0f0f5;
+    text-decoration: none;
+}
+
+.contact-list a:hover {
+    color: #83c051; /* ACCENT COLOR CHANGE APPLIED HERE */
+}
+
+/* Link Columns Styling */
+.footer-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Simple underline effect for titles */
+.footer-title::after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #83c051; /* ACCENT COLOR CHANGE APPLIED HERE */
+    margin-top: 8px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #b0b0c5;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: #83c051; /* ACCENT COLOR CHANGE APPLIED HERE */
+    padding-left: 5px;
+}
+
+/* Footer Bottom Section (Uses Flexbox) */
+.footer-bottom-info {
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.copyrights-text {
+    font-size: 13px;
+    color: #b0b0c5;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+/* Social Icons Styling */
+.social-icons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.social-icons li {
+    margin-left: 15px;
+}
+
+.social-icons a {
+    color: #f0f0f5;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #83c051; /* ACCENT COLOR CHANGE APPLIED HERE */
+}
+
+/* --- Responsive Adjustments (Media Queries) --- */
+
+/* Tablet View (2 columns) */
+@media (max-width: 992px) {
+    .footer-top-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile View (1 column stack) */
+@media (max-width: 600px) {
+    .footer-modern {
+        padding: 40px 0 20px;
+    }
+
+    .footer-top-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer-title::after {
+        margin-left: 0;
+    }
+
+    .footer-bottom-info {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .copyrights-text {
+        order: 2;
+        margin-bottom: 0;
+        margin-top: 20px;
+    }
+
+    .social-icons {
+        order: 1;
+        margin-left: 0;
+    }
+
+    .social-icons li {
+        margin: 0 10px;
+    }
+}
+
+/* Tablet View (2 columns) */
+@media (max-width: 992px) {
+    .footer-top-grid {
+        /* Switch to 2 columns */
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile View (1 column stack) */
+@media (max-width: 600px) {
+    .footer-modern {
+        padding: 40px 0 20px;
+    }
+
+    .footer-top-grid {
+        /* Stack all columns */
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer-title::after {
+        margin-left: 0;
+    }
+
+    .footer-bottom-info {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .copyrights-text {
+        order: 2; /* Puts copyright below social links on mobile */
+        margin-bottom: 0;
+        margin-top: 20px;
+    }
+
+    .social-icons {
+        order: 1;
+        margin-left: 0;
+    }
+
+    .social-icons li {
+        margin: 0 10px;
+    }
+}
+
+/* 2. SHOWS ONLY THE ACTIVE TAB CONTENT */
+.tabs-content .active-tab {
+    display: block;
+}
+.team-block-one .inner-box{
+  position: relative;
+  display: block;
+  margin-bottom: 45px;
+  text-align: center; /* Ensures content is centered */
+}
+.team-row-flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.team-block-one .inner-box .image-box{
+  position: relative;
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.team-block-one .inner-box .image-box img{
+  width: 100%;
+  border-radius: 50%;
+}
+
+.team-block-one .inner-box .image-box .overlay-image {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  transform: translatex(50%) scaleX(1.5);
+  opacity: 0;
+  filter: blur(10px);
+  transition: opacity 0.3s ease;
+  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  z-index: 1;
+  border-radius: 50%;
+}
+
+.team-block-one .inner-box:hover .image-box .overlay-image {
+  transform: translatex(0) scaleX(1);
+  opacity: 1;
+  filter: blur(0);
+}
+
+.team-block-one .inner-box .lower-content{
+  position: relative;
+  display: block;
+  padding-top: 23px;
+}
+
+.team-block-one .inner-box .lower-content h3{
+  position: relative;
+  display: block;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.team-block-one .inner-box .lower-content h3 a{
+  display: inline-block;
+  color: var(--title-color);
+}
+
+.team-block-one .inner-box .lower-content h3 a:hover{
+
+}
+
+.team-block-one .inner-box .lower-content .designation{
+  position: relative;
+  display: block;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.team-section .lower-box{
+  max-width: 960px;
+  width: 100%;
+  margin: 50px auto 0; /* FIX 2: Adds vertical spacing (50px) between the two rows */
+}
+
+.join-section{
+  position: relative;
+}
+
+.join-section .content-box{
+  position: relative;
+  display: block;
+}
+
+.join-section .content-box p{
+  font-size: 18px;
+  line-height: 30px;
+  margin-bottom: 40px;
+}
+
+
+/** rtl-css **/
+
+
+/** responsive-css **/
+
+@media only screen and (max-width: 1200px){
+
+}
+
+@media only screen and (max-width: 991px){
+  .join-section .content-box p br{
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 767px){
+  .team-section{
+    padding: 70px 0px 20px 0px;
+  }
+
+  .team-section.pt_0.pb_0{
+    padding: 0px;
+  }
+
+  .join-section{
+    padding: 70px 0px;
+  }
+}
+
+@media only screen and (max-width: 599px){
+
+}
+
+@media only screen and (max-width: 499px){
+  .team-block-one .inner-box{
+    position: relative;
+    display: block;
+    margin-bottom: 45px;
+    text-align: center; /* FIX: This centers the image and text below */
+  }
+}
+
 .icon-4:before {
     content: "\e903"
 }
@@ -20835,9 +21255,6 @@ service_hexagon {
     border-color:var(--theme-color) !important
 }
 
-.banner-style-three .content-box h2 span, .banner-style-two .content-box h2 span, .blog-details-content .comment-box .form-inner .form-group label span, .blog-details-content .post-share-option .social-links li a:hover, .blog-details-content blockquote .icon-box, .chooseus-block-one .inner-box .link a:hover, .chooseus-block-one .inner-box h3 a:hover, .content_block_five .content-box .inner-box .single-item h4 a:hover, .content_block_four .content-box .download-btn a:hover, .content_block_three .content-box .accordion-box .accordion .acc-btn.active .icon-box, .content_block_three .content-box .accordion-box .accordion .acc-btn.active h4, .content_block_two .content-box .inner-box .single-item h3 a:hover, .download-section .content-box h2 span, .dueal-section.alternat-2 .content_block_two .content-box .inner-box .single-item h3 a:hover, .footer-bottom .bottom-inner .copyright p a, .header-top .info li a:hover, .header-top .social-links li a:hover, .image_block_one .image-box .single-item .support-box h4 a:hover, .image_block_two .image-inner .support-box h4 a:hover, .industries-block-two .inner-box:hover .icon-box, .job-sidebar .info-widget ul li p a:hover, .list-style-one li:before, .main-footer .links-widget .links-list li a:hover, .main-footer.light-footer .links-widget .links-list li a:hover, .main-header .menu-right-content .link-box a:hover, .main-header .menu-right-content .search-btn button:hover, .main-menu .navigation > li.current > a, .main-menu .navigation > li:hover > a, .main-menu .navigation > li > .megamenu li > a:hover, .main-menu .navigation > li > ul > li > a:hover, .main-menu .navigation > li > ul > li > ul > li > a:hover, .news-block-three .inner-box .lower-content .post-info li a:hover, .news-block-three .inner-box .lower-content .post-info li i, .news-block-three .inner-box .lower-content h3 a:hover, .news-block-two .inner-box .lower-content .post-info li a:hover, .news-block-two .inner-box .lower-content h3 a:hover, .page-title .bread-crumb li a:hover, .portfolio-block-one .inner-box .content-box h3 a:hover, .pricing-block-one .pricing-table h3, .scroll-to-top .scroll-bar-text, .sec-title .sub-title, .sec-title h2 span, .service-block-one .inner-box .lower-content h3 a:hover, .service-sidebar .download-widget h4 span, .team-block-one .inner-box .lower-content h3 a:hover, .testimonial-block-three .inner-box .icon-box, .testimonial-style-three .testimonial-block .content-box .icon-box, .training-block-one .inner-box .text-box h3 a:hover, .video_block_two .video-content a, .welcome-section .content-box .inner-box .single-item h3 a:hover, .welcome-section .content-box h2 span {
-    color:var(--theme-color-2)
-}
 .sec-title .sub-title {
     position: relative;
     display: inline-block;
@@ -21592,10 +22009,6 @@ service_hexagon {
 
 .banner-style-three .content-box h2 span, .banner-style-two .content-box h2 span, .blog-details-content .comment-box .form-inner .form-group label span, .blog-details-content .post-share-option .social-links li a:hover, .blog-details-content blockquote .icon-box, .chooseus-block-one .inner-box .link a:hover, .chooseus-block-one .inner-box h3 a:hover, .content_block_five .content-box .inner-box .single-item h4 a:hover, .content_block_four .content-box .download-btn a:hover, .content_block_three .content-box .accordion-box .accordion .acc-btn.active .icon-box, .content_block_three .content-box .accordion-box .accordion .acc-btn.active h4, .content_block_two .content-box .inner-box .single-item h3 a:hover, .download-section .content-box h2 span, .dueal-section.alternat-2 .content_block_two .content-box .inner-box .single-item h3 a:hover, .footer-bottom .bottom-inner .copyright p a, .header-top .info li a:hover, .header-top .social-links li a:hover, .image_block_one .image-box .single-item .support-box h4 a:hover, .image_block_two .image-inner .support-box h4 a:hover, .industries-block-two .inner-box:hover .icon-box, .job-sidebar .info-widget ul li p a:hover, .list-style-one li:before, .main-footer .links-widget .links-list li a:hover, .main-footer.light-footer .links-widget .links-list li a:hover, .main-header .menu-right-content .link-box a:hover, .main-header .menu-right-content .search-btn button:hover, .main-menu .navigation > li.current > a, .main-menu .navigation > li:hover > a, .main-menu .navigation > li > .megamenu li > a:hover, .main-menu .navigation > li > ul > li > a:hover, .main-menu .navigation > li > ul > li > ul > li > a:hover, .news-block-three .inner-box .lower-content .post-info li a:hover, .news-block-three .inner-box .lower-content .post-info li i, .news-block-three .inner-box .lower-content h3 a:hover, .news-block-two .inner-box .lower-content .post-info li a:hover, .news-block-two .inner-box .lower-content h3 a:hover, .page-title .bread-crumb li a:hover, .portfolio-block-one .inner-box .content-box h3 a:hover, .pricing-block-one .pricing-table h3, .scroll-to-top .scroll-bar-text, .sec-title .sub-title, .sec-title h2 span, .service-block-one .inner-box .lower-content h3 a:hover, .service-sidebar .download-widget h4 span, .team-block-one .inner-box .lower-content h3 a:hover, .testimonial-block-three .inner-box .icon-box, .testimonial-style-three .testimonial-block .content-box .icon-box, .training-block-one .inner-box .text-box h3 a:hover, .video_block_two .video-content a, .welcome-section .content-box .inner-box .single-item h3 a:hover, .welcome-section .content-box h2 span {
     color:var(--theme-color-2)
-}
-
-.banner-carousel .content-box .upper-text, .blog-details-content .post-share-option .tags-list li a:hover, .blog-sidebar .tags-widget .tags-list li a:hover, .content_block_five .content-box .inner-box .single-item .icon-box, .content_block_two .content-box .inner-box .single-item:after, .content_block_two .content-box .inner-box .single-item:hover .count-text, .dots-style-one .owl-dots button.active, .dots-style-one .owl-dots button:hover, .header-style-four .main-menu .navigation > li > a:after, .header-style-one .main-menu .navigation > li > a:after, .list-style-one li:after, .news-block-three .inner-box .lower-content .category, .news-block-two .inner-box .lower-content .category, .sec-title .sub-title:before, .testimonial-style-two .owl-dots button, .welcome-section .content-box .inner-box .single-item:hover .icon-box, .welcome-section.alternat-2 .content-box .inner-box .single-item .icon-box, button.ltr, button.rtl {
-    background:var(--theme-color-2)
 }
 
 .blog-details-content .comment-box .form-inner .form-group input:focus, .blog-details-content .comment-box .form-inner .form-group textarea:focus, .blog-details-content .post-share-option .tags-list li a:hover, .blog-sidebar .tags-widget .tags-list li a:hover, .contact-section .form-inner .form-group input:focus, .contact-section .form-inner .form-group textarea:focus, .funfact-block-one .inner-box:hover, .job-form-section .form-inner .form-group input:focus, .job-form-section .form-inner .form-group textarea:focus, .main-menu .navigation > li > .megamenu, .main-menu .navigation > li > ul, .main-menu .navigation > li > ul > li > ul, .sec-title .sub-title:after, .welcome-section .content-box .inner-box .single-item:hover {
