@@ -1,0 +1,8 @@
+[phases.setup]
+nixpkgs = ["openjdk", "maven"]
+
+[phases.build]
+cmds = ["./mvnw clean package -DskipTests"]
+
+[phases.start]
+cmds = ["java -jar target/hustled-0.0.1-SNAPSHOT.jar"]
