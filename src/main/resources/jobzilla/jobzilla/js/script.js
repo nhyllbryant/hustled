@@ -33,6 +33,37 @@
 	
 	headerStyle();
 
+	document.addEventListener('DOMContentLoaded', function() {
+        // Get all tab buttons and tab content
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabsContent = document.querySelectorAll('.tabs-content .tab');
+
+        if (tabButtons.length > 0 && tabsContent.length > 0) {
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // 1. Remove 'active-btn' from all buttons
+                    tabButtons.forEach(btn => btn.classList.remove('active-btn'));
+
+                    // 2. Add 'active-btn' to the clicked button
+                    this.classList.add('active-btn');
+
+                    // Get the ID of the target tab content (e.g., '#tab-2')
+                    const targetTabId = this.getAttribute('data-tab');
+
+                    // 3. Hide all tab content
+                    tabsContent.forEach(content => content.classList.remove('active-tab'));
+
+                    // 4. Show the target tab content
+                    const targetTab = document.querySelector(targetTabId);
+                    if (targetTab) {
+                        targetTab.classList.add('active-tab');
+                    }
+                });
+            });
+        }
+    });
+
 
 	//Submenu Dropdown Toggle
 	if($('.main-header li.dropdown ul').length){
