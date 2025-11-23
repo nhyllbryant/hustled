@@ -260,9 +260,6 @@
   box-shadow: -5px 10px 25px rgba(220, 220, 220, 0.3);
 }
 
-.twm-explore-content {
-  background-color: #2a2e3a;
-}
 .twm-explore-content .twm-upload-file .site-button {
   text-shadow: 0 0 0 #eca315, 400px 0 0 #eca315;
   background-color: #fff;
