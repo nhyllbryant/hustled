@@ -6,6 +6,8 @@ import jakarta.transaction.Transactional;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class UserService {
     private final UserRepository userRepo;
@@ -14,6 +16,17 @@ public class UserService {
     public UserService(UserRepository userRepo, BCryptPasswordEncoder encoder) {
         this.userRepo = userRepo;
         this.encoder = encoder;
+    }
+
+    public User authenticate(String username, String password) {
+        Optional<User> userOpt = userRepo.findByUsername(username);
+        if (userOpt.isPresent()) {
+            User user = userOpt.get();
+            if (encoder.matches(password, user.getPassword())) {
+                return user;
+            }
+        }
+        return null;
     }
 
     public boolean register(User user){
