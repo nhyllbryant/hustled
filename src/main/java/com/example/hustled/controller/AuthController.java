@@ -47,7 +47,6 @@ public class AuthController {
     public String getRegisterModal(Model model) {
         model.addAttribute("user", new User());
         return "fragments/register-modal :: registerModal";
-        // fragments/register-modal.html must contain <div th:fragment="registerModal">...</div>
     }
 
     @PostMapping("/register")
