@@ -31,28 +31,28 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-                .csrf(csrf -> csrf.disable()) //Lambda
-                //.csrf(AbstractHttpConfigurer::disable) //MethodReference
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/","/index", "/modal/**", "/login", "/login/**", "/register","/modal/register", "/process-register").permitAll()
-                        .requestMatchers("/css/**", "/js/**", "/images/**", "/fonts/**", "/webjars/**").permitAll() // ✅ static resources
-                        .requestMatchers("/jobs/**").authenticated()
+                        .requestMatchers("/", "/index", "/register", "/login","/job-grid","/candidate-grid", "/candidate**","/employer**","/modal/**", "/css/**", "/js/**").permitAll()
+                        .requestMatchers("/admin-profile").hasAuthority("ADMIN")
+                        .requestMatchers("/employer-profile","/employer-manage-jobs","/employer-transaction","/employer-change-password").hasAuthority("EMPLOYER")
+                        .requestMatchers("/candidate-profile","/candidate-chat","/candidate-my-resume","/candidate-jobs-applied","/candidate-saved-jobs","/candidate-change-password").hasAuthority("CANDIDATE")
                         .anyRequest().authenticated()
                 )
                 .formLogin(form -> form
-                        .loginPage("/login")
-                        .loginProcessingUrl("/process-login")
-                        .defaultSuccessUrl("/jobs", true)
-                        .failureUrl("/login?error=true")
+                        .loginPage("/index?showLogin=true")
+                        .loginProcessingUrl("/login")
+                        .defaultSuccessUrl("/route-by-role", true)
                         .permitAll()
+                )
+                .rememberMe(remember -> remember
+                        .key("uniqueAndSecretKey") // 🔐 change this to a secure random string
+                        .rememberMeParameter("remember-me") // matches your form input name
+                        .tokenValiditySeconds(7 * 24 * 60 * 60) // 7 days
                 )
                 .logout(logout -> logout
-                        .logoutUrl("/logout")
                         .logoutSuccessUrl("/index")
                         .permitAll()
-                )
-                .httpBasic(Customizer.withDefaults());
+                );
         return http.build();
     }
-
 }

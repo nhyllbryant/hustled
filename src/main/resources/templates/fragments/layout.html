@@ -59,54 +59,40 @@
                     <div class="nav-animation header-nav navbar-collapse collapse d-flex justify-content-center">
 
                         <ul class=" nav navbar-nav">
-                            <li class="has-mega-menu"><a href="index.html">Home</a>
-                            <li class="has-child"><a href="javascript:;">Jobs</a>
-                                <ul class="sub-menu">
-                                    <li><a href="job-grid.html">Jobs Grid</a></li>
-                                    <li><a href="job-grid-with-map.html">Jobs Grid with Map</a></li>
-                                    <li><a href="job-list.html">Jobs List</a></li>
-                                    <li class="has-child"><a href="javascript:;">Job Detail</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="job-detail.html">Detail 1</a>
-                                            <li><a href="job-detail-v2.html">Detail 2 </a>
-                                        </ul>
-                                    </li>
-                                    <li><a href="apply-job.html">Apply Jobs</a></li>
-                                </ul>
-                            </li>
-                            <li class="has-child"><a href="javascript:;">Employers</a>
-                            </li>
-                            <li class="has-child"><a href="javascript:;">Pages</a>
-                            </li>
-                            <li class="has-child"><a href="javascript:;">Candidates</a>
-                            </li>
-                            <li class="has-child"><a href="javascript:;">Blog</a>
-                            </li>
+                            <li class="has-mega-menu"><a href="index.html">Home</a></li>
+                            <li class="has-child"><a th:href="@{/job-grid}">Jobs</a></li>
+                            <li class="has-child"><a th:href="@{/candidate-grid}">Candidates</a></li>
+                            <li class="has-child"><a th:href="@{/index}">About Us</a></li>
+                            <li class="has-child"><a th:href="@{/index}">Contact</a></li>
                         </ul>
 
                     </div>
 
                     <div class="extra-nav header-2-nav">
                         <div class="extra-cell">
-                            <div class="header-search">
-                                <a href="#search" class="header-search-icon"><i class="feather-search"></i></a>
-                            </div>
-                        </div>
-                        <div class="extra-cell">
-                            <div class="header-nav-btn-section">
+                            <div class="header-nav-btn-section" th:if="${loggedInUser == null}">
                                 <div class="twm-nav-btn-left">
                                     <a class="twm-nav-sign-up" data-bs-toggle="modal" href="#sign_up_popup">
                                         <i class="feather-log-in"></i> Sign Up
                                     </a>
                                 </div>
                                 <div class="twm-nav-btn-right">
-                                    <a href="dash-post-job.html" class="twm-nav-post-a-job">
-                                        <i class="feather-briefcase"></i> Post a job
+                                    <a href="#" class="twm-nav-post-a-job" data-bs-toggle="modal" data-bs-target="#log_in_popup">
+                                        <i class="feather-briefcase"></i> Log In
                                     </a>
                                 </div>
                             </div>
-                        </div>
 
+                            <div class="dropdown twm-user-menu" th:if="${loggedInUser != null}">
+                                <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img th:src="@{/images/default-profile.png}" alt="Profile" class="rounded-circle" width="40" height="40">
+                                    <span th:text="${loggedInUser.username}">Username</span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li><a class="dropdown-item" href="/manual-logout"><i class="feather-log-out"></i> Logout</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
 
 
@@ -114,18 +100,6 @@
                 </div>
 
 
-            </div>
-
-            <div id="search">
-                <span class="close"></span>
-                <form role="search" id="searchform" action="/search" method="get" class="radius-xl">
-                    <input class="form-control" value="" name="q" type="search" placeholder="Type to search"/>
-                    <span class="input-group-append">
-                                <button type="button" class="search-btn">
-                                    <i class="fa fa-paper-plane"></i>
-                                </button>
-                            </span>
-                </form>
             </div>
         </div>
     </header>
@@ -291,26 +265,6 @@
 <script  th:src="@{/js/swiper-bundle.min.js}"></script>
 <script  th:src="@{/js/custom.js}"></script>
 
-<!--<script>-->
-
-<!--    //Pre Load Event-->
-<!--    document.addEventListener("DOMContentLoaded", function () {-->
-<!--        // Preload Register Modal-->
-<!--        fetch("/modal/register")-->
-<!--            .then(res => res.text())-->
-<!--            .then(html => {-->
-<!--                document.getElementById("register-modal-container").innerHTML = html;-->
-<!--            });-->
-
-<!--        // Preload Login Modal-->
-<!--        fetch("/modal/login?fromRegister=false")-->
-<!--            .then(res => res.text())-->
-<!--            .then(html => {-->
-<!--                document.getElementById("login-modal-container").innerHTML = html;-->
-<!--            });-->
-
-<!--    });-->
-<!--</script>-->
 
 <script th:inline="javascript">
     let showLogin = [[${showLogin}]];
