@@ -28,40 +28,11 @@ public class SecurityConfig {
         return provider;
     }
 
-//    @Bean
-//    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-//        http
-//                .csrf(csrf -> csrf.disable()) //Lambda
-//                //.csrf(AbstractHttpConfigurer::disable) //MethodReference
-//                .authorizeHttpRequests(auth -> auth
-//                        .requestMatchers("/","/index", "/modal/**", "/login", "/login/**", "/register","/modal/register", "/process-register").permitAll()
-//                        .requestMatchers("/css/**", "/js/**", "/images/**", "/fonts/**", "/webjars/**").permitAll() // ✅ static resources
-//                        .requestMatchers("/jobs/**").authenticated()
-//                        .anyRequest().authenticated()
-//                )
-//                .formLogin(form -> form
-//                        .loginPage("/login")
-//                        .loginProcessingUrl("/process-login")
-//                        .defaultSuccessUrl("/jobs", true)
-//                        .failureUrl("/login?error=true")
-//                        .permitAll()
-//                )
-//                .logout(logout -> logout
-//                        .logoutUrl("/logout")
-//                        .logoutSuccessUrl("/index")
-//                        .permitAll()
-//                )
-//                .httpBasic(Customizer.withDefaults());
-//        return http.build();
-//    }
-
-
-
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/", "/index", "/register", "/login", "/modal/**", "/css/**", "/js/**").permitAll()
+                        .requestMatchers("/", "/index", "/register", "/login","/job-grid","/candidate-grid", "/modal/**", "/css/**", "/js/**").permitAll()
                         .requestMatchers("/admin-profile").hasAuthority("ADMIN")
                         .requestMatchers("/employer-profile").hasAuthority("EMPLOYER")
                         .requestMatchers("/candidate-profile").hasAuthority("CANDIDATE")

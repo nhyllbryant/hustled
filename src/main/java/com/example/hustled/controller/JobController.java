@@ -23,6 +23,11 @@ public class JobController {
         this.userRepo = userRepo;
     }
 
+    @GetMapping("/job-grid")
+    public String jobGrid() {
+        return "job-grid";
+    }
+
     @GetMapping
     public String list(Model model) {
         model.addAttribute("jobs", jobService.findAll());

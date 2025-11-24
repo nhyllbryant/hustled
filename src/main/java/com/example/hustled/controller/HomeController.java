@@ -72,4 +72,25 @@ public class HomeController {
         return "admin-profile";
     }
 
+    @GetMapping("/job-grid")
+    public String jobGrid(Model model, Authentication authentication) {
+        if (authentication != null && authentication.isAuthenticated()) {
+            UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+            Optional<User> userOpt = userRepository.findByUsername(userDetails.getUsername());
+            userOpt.ifPresent(user -> model.addAttribute("loggedInUser", user));
+        }
+        return "job-grid";
+    }
+
+    @GetMapping("/candidate-grid")
+    public String candidateGrid(Model model, Authentication authentication) {
+        if (authentication != null && authentication.isAuthenticated()) {
+            UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+            Optional<User> userOpt = userRepository.findByUsername(userDetails.getUsername());
+            userOpt.ifPresent(user -> model.addAttribute("loggedInUser", user));
+        }
+        return "candidate-grid";
+    }
+
+
 }
