@@ -92,5 +92,89 @@ public class HomeController {
         return "candidate-grid";
     }
 
+    @GetMapping("/candidate-chat")
+    public String candidateChat(Model model, Authentication authentication) {
+        if (authentication != null && authentication.isAuthenticated()) {
+            UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+            Optional<User> userOpt = userRepository.findByUsername(userDetails.getUsername());
+            userOpt.ifPresent(user -> model.addAttribute("loggedInUser", user));
+        }
+        return "candidate-chat";
+    }
+
+
+    @GetMapping("/candidate-my-resume")
+    public String candidateMyResume(Model model, Authentication authentication) {
+        if (authentication != null && authentication.isAuthenticated()) {
+            UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+            Optional<User> userOpt = userRepository.findByUsername(userDetails.getUsername());
+            userOpt.ifPresent(user -> model.addAttribute("loggedInUser", user));
+        }
+        return "candidate-my-resume";
+    }
+
+    @GetMapping("/candidate-jobs-applied")
+    public String candidateJobApplied(Model model, Authentication authentication) {
+        if (authentication != null && authentication.isAuthenticated()) {
+            UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+            Optional<User> userOpt = userRepository.findByUsername(userDetails.getUsername());
+            userOpt.ifPresent(user -> model.addAttribute("loggedInUser", user));
+        }
+        return "candidate-jobs-applied";
+    }
+
+    @GetMapping("/candidate-saved-jobs")
+    public String candidateSavedJobs(Model model, Authentication authentication) {
+        if (authentication != null && authentication.isAuthenticated()) {
+            UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+            Optional<User> userOpt = userRepository.findByUsername(userDetails.getUsername());
+            userOpt.ifPresent(user -> model.addAttribute("loggedInUser", user));
+        }
+        return "candidate-saved-jobs";
+    }
+
+    @GetMapping("/candidate-change-password")
+    public String candidateChangePassword(Model model, Authentication authentication) {
+        if (authentication != null && authentication.isAuthenticated()) {
+            UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+            Optional<User> userOpt = userRepository.findByUsername(userDetails.getUsername());
+            userOpt.ifPresent(user -> model.addAttribute("loggedInUser", user));
+        }
+        return "candidate-change-password";
+    }
+
+    @GetMapping("/employer-manage-jobs")
+    public String employerManageJobs(Model model, Authentication authentication) {
+        if (authentication != null && authentication.isAuthenticated()) {
+            UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+            Optional<User> userOpt = userRepository.findByUsername(userDetails.getUsername());
+            userOpt.ifPresent(user -> model.addAttribute("loggedInUser", user));
+        }
+        return "employer-manage-jobs";
+    }
+
+
+    @GetMapping("/employer-transaction")
+    public String employerTransaction(Model model, Authentication authentication) {
+        if (authentication != null && authentication.isAuthenticated()) {
+            UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+            Optional<User> userOpt = userRepository.findByUsername(userDetails.getUsername());
+            userOpt.ifPresent(user -> model.addAttribute("loggedInUser", user));
+        }
+        return "employer-transaction";
+    }
+
+
+    @GetMapping("/employer-change-password")
+    public String employerChangePassword(Model model, Authentication authentication) {
+        if (authentication != null && authentication.isAuthenticated()) {
+            UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+            Optional<User> userOpt = userRepository.findByUsername(userDetails.getUsername());
+            userOpt.ifPresent(user -> model.addAttribute("loggedInUser", user));
+        }
+        return "employer-change-password";
+    }
+
+
 
 }

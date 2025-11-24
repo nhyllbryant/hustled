@@ -265,26 +265,6 @@
 <script  th:src="@{/js/swiper-bundle.min.js}"></script>
 <script  th:src="@{/js/custom.js}"></script>
 
-<!--<script>-->
-
-<!--    //Pre Load Event-->
-<!--    document.addEventListener("DOMContentLoaded", function () {-->
-<!--        // Preload Register Modal-->
-<!--        fetch("/modal/register")-->
-<!--            .then(res => res.text())-->
-<!--            .then(html => {-->
-<!--                document.getElementById("register-modal-container").innerHTML = html;-->
-<!--            });-->
-
-<!--        // Preload Login Modal-->
-<!--        fetch("/modal/login?fromRegister=false")-->
-<!--            .then(res => res.text())-->
-<!--            .then(html => {-->
-<!--                document.getElementById("login-modal-container").innerHTML = html;-->
-<!--            });-->
-
-<!--    });-->
-<!--</script>-->
 
 <script th:inline="javascript">
     let showLogin = [[${showLogin}]];
