@@ -27,5 +27,5 @@ public class User {
     private String phone;
 
     @Column(nullable = false)
-    private String role = "USER";
+    private String role;  // "CANDIDATE" or "EMPLOYER"
 }

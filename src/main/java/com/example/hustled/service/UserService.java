@@ -21,7 +21,6 @@ public class UserService {
             return false;
         }
         user.setPassword(encoder.encode(user.getPassword()));
-        user.setRole("USER");
 
         User newUser = null;
         try{

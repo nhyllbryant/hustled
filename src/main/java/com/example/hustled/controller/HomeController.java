@@ -9,17 +9,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class HomeController {
 
 
-//    @GetMapping({"/","/index"})
-//    public String home() {
-//        return "index";
-//    }
-
     @GetMapping({"/", "/index"})
     public String home(@RequestParam(value = "showLogin", required = false) Boolean showLogin,
-                       Model model)
-    {
+                       Model model) {
+        model.addAttribute("showLogin", Boolean.TRUE.equals(showLogin));
+
         if (Boolean.TRUE.equals(showLogin)) {
-            model.addAttribute("showLogin", true);
             model.addAttribute("loginHeader", "Registration Successful");
         } else {
             model.addAttribute("loginHeader", "Login");
