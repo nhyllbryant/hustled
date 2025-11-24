@@ -65,4 +65,6 @@ public class AuthController {
         // ✅ Redirect to index with flag
         return "redirect:/index?showLogin=true";
     }
+
+
 }
