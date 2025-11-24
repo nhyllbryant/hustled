@@ -34,7 +34,7 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable()) //Lambda
                 //.csrf(AbstractHttpConfigurer::disable) //MethodReference
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/","/index", "/login", "/login/**", "/register","/modal/register", "/process-register").permitAll()
+                        .requestMatchers("/","/index", "/modal/**", "/login", "/login/**", "/register","/modal/register", "/process-register").permitAll()
                         .requestMatchers("/css/**", "/js/**", "/images/**", "/fonts/**", "/webjars/**").permitAll() // ✅ static resources
                         .requestMatchers("/jobs/**").authenticated()
                         .anyRequest().authenticated()
